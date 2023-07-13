@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .logo {
+            margin-left: 10px;
+            Width: 35%;
+            height: 80px;
+            font-size: 25px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .nav-links {
+            width: 65%;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 30px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .fa-cart-shopping {
+            margin-top: 5px;
+        }
+
+        .home:hover,
+        .products:hover,
+        .contact:hover {
+            text-decoration: underline;
+            font-size: 22px;
+            opacity: 0.5;
+        }
+
+        .fa-user:hover,
+        .fa-cart-shopping:hover,
+        .fa-heart:hover,
+        .search-icon:hover {
+            font-size: 25px;
+            opacity: 0.5;
+        }
+
+        .products-description h2 {
+            text-align: left;
+            font-size: 35px;
+            margin-bottom: 70px;
+            margin-top: 100px;
+            margin-left: 50px;
+        }
+
+        .products-description p {
+            font-size: 20px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .products-list-1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: space-evenly;
+        }
+
+        .product-list-2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: space-evenly;
+            margin-top: 50px;
+        }
+
+        .product-list-3 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: space-evenly;
+            margin-top: 50px;
+        }
+
+        .product-list-4 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: space-evenly;
+            margin-top: 50px;
+        }
+
+        .product1 img:hover,
+        .product2 img:hover,
+        .product3 img:hover,
+        .product4 img:hover {
+            transform: scale(1.05);
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .select {
+            height: 30px;
+            width: 150px;
+            margin-top: 100px;
+            margin-bottom: 70px;
+            margin-right: 50px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .select:focus {
+            border: 2px solid orangered;
+        }
+
+        .pagination {
+            display: inline-block;
+            margin-top: 30px;
+            margin-left: 30px;
+            margin-bottom: 50px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            font-size: 22px;
+        }
+
+        .pagination a.active {
+            background-color: crimson;
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: black;
+            color: white;
+        }
+
+        .footer {
+            margin-top: 50px;
+            background-color: lightgrey;
+            color: black;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: space-around;
+        }
+
+        .left-side h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .left-side p {
+            font-size: 20px;
+        }
+
+        .address {
+            line-height: 40px;
+        }
+
+        .footer-center h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            margin-top: 20px;
+        }
+
+        .footer-center p {
+            font-size: 18px;
+        }
+
+        .footer-center {
+            line-height: 28px;
+            margin-top: 23px;
+        }
+
+        .footer-next h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            margin-top: 20px;
+        }
+
+        .footer-next p {
+            font-size: 18px;
+        }
+
+        .footer-next {
+            line-height: 28px;
+            margin-top: 23px;
+        }
+
+        .footer-end h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            margin-top: 20px;
+        }
+
+        .footer-end {
+            line-height: 28px;
+            margin-top: 23px;
+            margin-bottom: 80px;
+        }
+
+        .footer-end p {
+            font-size: 18px;
+        }
+
+        #email {
+            width: 200px;
+            height: 40px;
+            margin-top: 10px;
+        }
+
+        .footer-end button {
+            width: 100px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .footer-end button:hover {
+            background-color: crimson;
+        }
+
+        .icons {
+            margin-top: 20px;
+            font-size: larger;
+            cursor: pointer;
+        }
+
+        .fa-instagram,
+        .fa-twitter,
+        .fa-pinterest,
+        .fa-youtube,
+        .fa-tiktok {
+            margin-left: 10px;
+        }
+
+        .fa-facebook-f:hover,
+        .fa-instagram:hover,
+        .fa-twitter:hover,
+        .fa-pinterest:hover,
+        .fa-youtube:hover,
+        .fa-tiktok:hover {
+            font-size: 23px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all-products">
+        <div class="nav-bar">
+            <div class="logo">
+                <h1>F Lounge</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="home">Home</a>
+                <a href="#" class="products">Products</a>
+                <a href="#" class="contact">Contact Us</a>
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#"><i class="fa-regular fa-heart"></i></a>
+                <a href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
+            </div>
+        </div>
+        <div class="products-description">
+            <div class="top">
+                <h2>All Products</h2>
+                <select class="select">
+                    <option>Product Filter</option>
+                    <option>Formal Shirts</option>
+                    <option>Casual Shirts</option>
+                    <option>T-Shirts</option>
+                    <option>Jeans</option>
+                    <option>Pants</option>
+                </select>
+            </div>
+            <div class="products-list">
+                <div class="products-list-1">
+                    <div class="product1">
+                        <a href="product_detail.html"><img src="/Images/beige shirt.jpg" width="300px"
+                                height="400px"></a>
+                        <p>Beige Formal Shirt</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-regular fa-star star5"></i>
+                        <p>₹1200.00</p>
+                    </div>
+                    <div class="product2">
+                        <img src="/Images/colored t-shirt.jpg" width="300px" height="400px">
+                        <p>Navy T-shirt</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color: green;"></i>
+                        <p>₹900.00</p>
+                    </div>
+                    <div class="product3">
+                        <img src="/Images/grey jeans.jpg" width="300px" height="400px">
+                        <p>Louis Philippe Men Grey Jeans</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-regular fa-star star5"></i>
+                        <p>₹2249.00</p>
+                    </div>
+                    <div class="product4">
+                        <img src="/Images/black pants.jpg" width="300px" height="400px">
+                        <p>Black Formal Pants</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color: green;"></i>
+                        <i class="fa-regular fa-star star5"></i>
+                        <p>₹1000.00</p>
+                    </div>
+                </div>
+                <div class="product-list-2">
+                    <div class="product1">
+                        <img src="/Images/deodrants.jpg" width="300px" height="400px">
+                        <p>Deodrants for Men - Pack of 3</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <p>₹600.00</p>
+                    </div>
+                    <div class="product2">
+                        <img src="/Images/sky blue casual shirt.jpg" width="300px" height="400px">
+                        <p>Skyblue Casual Shirt</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color: green;"></i>
+                        <i class="fa-regular fa-star star5"></i>
+                        <p>₹900.00</p>
+                    </div>
+                    <div class="product3">
+                        <img src="/Images/ankles.jpg" width="300px" height="400px">
+                        <p>Men Solid Ankle Length</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color: green;"></i>
+                        <p>₹100.00</p>
+                    </div>
+                    <div class="product4">
+                        <img src="/Images/pink casuals.jpg" width="300px" height="400px">
+                        <p>Pink Casual Shirt</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-regular fa-star star5"></i>
+                        <p>₹900.00</p>
+                    </div>
+                </div>
+                <div class="product-list-3">
+                    <div class="product1">
+                        <img src="/Images/Shoes.jpg" width="300px" height="400px">
+                        <p>Footox Lace Sneakers For Boys</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color: green;"></i>
+                        <p>₹900.00</p>
+                    </div>
+                    <div class="product2">
+                        <img src="/Images/white sliders.jpg" width="300px" height="400px">
+                        <p>Men White Sliders</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color: green;"></i>
+                        <p>₹800.00</p>
+                    </div>
+                    <div class="product3">
+                        <img src="/Images/Full sleeve T-shirt.jpg" width="300px" height="400px">
+                        <p>Full Sleeve Green Casual T-shirt</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color: green;"></i>
+                        <i class="fa-regular fa-star star5"></i>
+                        <p>₹800.00</p>
+                    </div>
+                    <div class="product4">
+                        <img src="/Images/Black track pants.jpg" width="300px" height="400px">
+                        <p>Men Black track Pants</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color: green;"></i>
+                        <p>₹700.00</p>
+                    </div>
+                </div>
+                <div class="product-list-4">
+                    <div class="product1">
+                        <img src="/Images/tan color belts.jpg" width="300px" height="400px">
+                        <p>Tan Color Belts</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-regular fa-star star5"></i>
+                        <p>₹500.00</p>
+                    </div>
+                    <div class="product2">
+                        <img src="/Images/Yellow.jpg" width="300px" height="400px">
+                        <p>Yellow T-shirt</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color: green;"></i>
+                        <p>₹800.00</p>
+                    </div>
+                    <div class="product3">
+                        <img src="/Images/light pink shirt.jpg" width="300px" height="400px">
+                        <p>FormalLight Pink Shirt</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-regular fa-star star5"></i>
+                        <p>₹849.00</p>
+                    </div>
+                    <div class="product2">
+                        <img src="/Images/white casual pants.jpg" width="300px" height="400px">
+                        <p>White Casual Pants</p>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color: green;"></i>
+                        <p>₹900.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&raquo;</a>
+            </div>
+
+            <!--Footer Section-->
+
+            <div class="footer">
+                <div class="footer-content">
+                    <div class="left-side">
+                        <h1>F Lounge</h1>
+                        <div class="address">
+                            <p>Olaparath Building, St Benedict Rd, Near North</p>
+                            <p>Railway Station, Ernakulam North, Kacheripady</p>
+                            <p>Ernakulam, Kerala 682018</p>
+                        </div><br>
+                        <p>f-loungeekm@gmail.com</p>
+                    </div>
+                    <div class="footer-center">
+                        <h3>Information</h3>
+                        <p>Shop</p>
+                        <p>Contact Us</p>
+                        <p>About Us</p>
+                        <p>Shipping & Returns</p>
+                        <p>Privacy Policy</p>
+                    </div>
+                    <div class="footer-next">
+                        <h3>Useful Links</h3>
+                        <p>Blog</p>
+                        <p>My account</p>
+                        <p>Wishlist</p>
+                        <p>Terms of Service</p>
+                    </div>
+                    <div class="footer-end">
+                        <h3>Newsletter</h3>
+                        <p>Get Tethys and discover streamlined website <br> construction today!</p>
+                        <input type="email" name="email" id="email" placeholder="Your email address">
+                        <button>Sign up</button><br>
+                        <div class="icons">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-pinterest"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-tiktok"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
